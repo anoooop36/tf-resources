@@ -16,8 +16,8 @@ resource "google_sql_database_instance" "csc_cloud_sql_instance" {
     activation_policy = var.activation_policy
     backup_configuration {
       enabled           = var.backup_configuration_enable
-      binary_log_enabled = var.bc_binary_log_enabled && startswith(var.sql_database_version, "MYSQL")
-      point_in_time_recovery_enabled = var.bc_point_in_time_recovery_enabled && (startswith(var.sql_database_version, "SQLSERVER") || startswith(var.sql_database_version, "POSTGRESS"))
+      binary_log_enabled = var.bc_binary_log_enabled
+      point_in_time_recovery_enabled = var.bc_point_in_time_recovery_enabled
     }
   }
 }
